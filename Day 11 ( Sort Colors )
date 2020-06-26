@@ -1,0 +1,26 @@
+class Solution {
+public:
+    void naiveSolve(vector<int>&nums)
+    {
+        int count[3]={0,0,0};
+        int counter = 0;
+        for(int num:nums)
+        {
+            count[num]++;
+        }
+        int i = 0;
+        while(i<nums.size())
+        {
+            while(count[counter]>0)
+            {
+            nums[i] = counter;
+            i++;
+            count[counter]--;
+            }
+            counter++;
+        }
+    }
+    void sortColors(vector<int>& nums) {
+        naiveSolve(nums);
+    }
+};
